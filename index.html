@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html ng-app = "ekart">
+<head>
+<meta charset="UTF-8">
+<title>Example of Bootstrap 3 Static Navbar</title>
+
+<style type="text/css">
+    .bs-example{
+    	margin: 20px;
+    }
+</style>
+</head> 
+<body>
+    <div ng-controller = "mainCtrl">
+    <div class = "container">
+    <div ng-include = "'/app/navigation/navigation.tpl.html'"></div>
+        </div>
+    
+    <div ng-include = "contentUrl"></div>
+    </div>
+     
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css">
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap-theme.min.css">
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.6/angular.min.js"></script>
+    <script src="app/app.js"></script>
+    
+    <script src="app/common/common.js"></script>
+    <script src="app/common/countriesFactory.js"></script>
+    <script src="app/common/statesFactory.js"></script>
+    <!--Main Module-->
+    <script src="app/main/main.js"></script>
+    <script src="app/main/main.controller.js"></script>
+    <!--Navigation Module-->
+    <script src="app/navigation/navigation.js"></script>
+    <script src="app/navigation/navigation.controller.js"></script>
+    <!--Register Module-->
+    <script src="app/register/register.js"></script>
+    <script src="app/register/register.controller.js"></script>
+    <!--StartPage Module-->
+    
+</body>
+</html>                                		

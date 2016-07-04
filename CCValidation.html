@@ -1,0 +1,90 @@
+<html>
+<body>
+<script>
+function Validation(){
+var z = new Array();
+var w = new Array();
+var x  = document.getElementById("CardNumberId").value;
+
+for(i = 0; i < x.length; i++){
+var y = x.substr(i,1);
+z[i] = y;
+}
+
+
+if((x.length)%2 == 0){
+for(j = 0; j<x.length;j++){
+if(j%2 == 0){
+if(z[j]*2 > 9){
+ w[j] = (parseInt((z[j]*2)%10) + parseInt((z[j]*2)/10));
+}
+else{ w[j] = parseInt(z[j]*2);}
+
+}
+else{
+w[j] = parseInt(z[j]);
+}
+}
+}
+
+else{
+for(j = 0; j<x.length;j++){
+if(j%2 != 0){
+if(z[j]*2 > 9){
+ w[j] = (parseInt((z[j]*2)%10) + parseInt((z[j]*2)/10));
+}
+else{ w[j] = parseInt(z[j]*2);}
+
+}
+else{
+w[j] = parseInt(z[j]);
+}
+}
+}
+
+var total = 0;
+for(i in w){
+total += w[i];
+}
+console.log(w);
+console.log(total);
+
+
+if(total%10 == 0){
+document.write("The card is valid.");
+}
+else{
+document.write("The card is not valid.");
+}
+}
+
+function checkCompany(){
+
+var x  = document.getElementById("CardNumberId").value;
+var w = new Array();
+for(i = 0; i < x.length; i++){
+var y = x.substr(i,1);
+w[i] = y;
+}
+
+
+console.log(w.slice(0,4).join(""));	
+
+if(w.length == 16 || w.length == 13){
+if(w[0] == 4 || w.slice(0,4).join("") == 6011 || w.slice(0,2).join("") == 51 || w.slice(0,2).join("") == 52 || w.slice(0,2).join("") == 53
+|| w.slice(0,2).join("") == 54 || w.slice(0,2).join("") == 55 || w.slice(0,2).join("") == 37){
+Validation();
+}
+else{
+document.write("The card is not valid.");
+}
+}
+else{
+document.write("The card is not valid.");	
+}
+}
+</script>
+Card Number: <input type = "Text" name = "cardNumberText" id = "CardNumberId" width = "50"></br></br>
+<input type = "Button" value = "submit" onClick = "checkCompany()">
+</body>
+</html>

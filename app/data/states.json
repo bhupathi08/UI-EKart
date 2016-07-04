@@ -1,0 +1,9 @@
+{
+    "states":
+    [
+        {"stateName":"Telangana","stateCode":"TG","countryCode":"IN"},
+                   {"stateName":"Andhra Pradesh","stateCode":"AP","countryCode":"IN"},
+                   {"stateName":"Texas","stateCode":"TX","countryCode":"US"},
+                   {"stateName":"Illinois","stateCode":"IL","countryCode":"US"}
+    ]
+}

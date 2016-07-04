@@ -1,0 +1,66 @@
+<div ng-controller = "regCtrl">
+<form class="form-horizontal">
+    <div class="form-group">
+        <label for="inputFirstName" class="control-label col-xs-2">First Name</label>
+        <div class="col-xs-6">
+            <input type="text" ng-model="registerUser.firstName" class="form-control" id="inputFirstName" placeholder="FirstName">
+        </div>
+    </div>
+        <div class="form-group">
+        <label for="inputLastName" class="control-label col-xs-2">Last Name</label>
+        <div class="col-xs-6">
+            <input type="text" ng-model="registerUser.lastName" class="form-control" id="inputLastName" placeholder="LastName">
+        </div>
+    </div>
+     <div class="form-group">
+        <label class="control-label col-xs-2">Country</label>
+        <div class="col-xs-6">
+            <select ng-model = "selectedCountry" class="form-control" ng-options = "country.countryName for country in countries"
+                    ng-click = "countryChanged()">
+            <option value="">Select Country</option>
+            </select>
+            </div>
+    </div>
+    
+    <div class="form-group">
+        <label class="control-label col-xs-2">State</label>
+        <div class="col-xs-6">
+            <select ng-model = "selectedState" class="form-control" ng-options = "state.stateName for state in states">
+            <option value="">Select State</option>
+            </select>
+            </div>
+    </div>
+    
+        <div class="form-group">
+        <label class="control-label col-xs-2">Gender</label>
+        <div class="col-xs-2">
+            <label>Male</label>
+            <input type="radio" ng-model="registerUser.gender" value="Male" id="inputGender" name="gender">
+            </div>
+            <div class = "col-xs-2">
+            <label>Female</label>
+            <input type="radio" ng-model="registerUser.gender" value="Female" id="inputGender" name="gender">
+        </div>
+    </div>
+        <div class="form-group">
+        <label for="inputAge" class="control-label col-xs-2">Age</label>
+        <div class="col-xs-4">
+            <input type="text" ng-model="registerUser.age" class="form-control" id="inputAge" placeholder="Age">
+        </div>
+    </div>
+    <div class="form-group">
+        <label for="inputEmail" class="control-label col-xs-2">Email</label>
+        <div class="col-xs-6">
+            <input type="email" ng-model="registerUser.email" class="form-control" id="inputEmail" placeholder="Email">
+        </div>
+    </div>
+    
+
+    <div class="form-group">
+        <div class="col-xs-offset-2 col-xs-10">
+            <button type="submit" class="btn btn-primary" ng-click="register()">Register</button>
+        </div>
+    </div>
+</form>
+    <pre ng-if="ifRegister">{{registerUser|json|uppercase}}</pre>
+    </div>
